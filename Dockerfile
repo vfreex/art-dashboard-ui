@@ -1,4 +1,5 @@
 FROM registry.access.redhat.com/ubi9/nodejs-18:latest as builder
+USER root
 RUN npm install -g corepack && corepack prepare pnpm@latest --activate
 WORKDIR /src
 COPY . .
